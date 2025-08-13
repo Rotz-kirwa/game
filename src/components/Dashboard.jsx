@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { DEMO_MODE, DEMO_USER, API_BASE_URL } from '../api';
 import DiceGame from './DiceGame';
 import CoinFlipGame from './CoinFlipGame';
 import SlotsGame from './SlotsGame';
@@ -34,8 +35,15 @@ const Dashboard = ({ onLogout }) => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
+        if (DEMO_MODE) {
+          const demoUser = JSON.parse(localStorage.getItem('user') || '{}');
+          setUser(demoUser.email ? demoUser : DEMO_USER);
+          setLoading(false);
+          return;
+        }
+
         const token = localStorage.getItem('token');
-        const response = await axios.get('http://localhost:5000/protected', {
+        const response = await axios.get(`${API_BASE_URL}/protected`, {
           headers: { Authorization: `Bearer ${token}` }
         });
         setUser(response.data);

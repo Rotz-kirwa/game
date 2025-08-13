@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import { DEMO_MODE, DEMO_USER, API_BASE_URL } from '../api';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
@@ -28,8 +29,16 @@ const LoginForm = () => {
     setErrors({});
 
     try {
+      if (DEMO_MODE) {
+        // Demo mode - simulate login
+        localStorage.setItem('token', DEMO_USER.token);
+        localStorage.setItem('user', JSON.stringify(DEMO_USER));
+        window.location.reload();
+        return;
+      }
+
       const endpoint = showSignUp ? '/register' : '/login';
-      const response = await axios.post(`http://localhost:5000${endpoint}`, formData);
+      const response = await axios.post(`${API_BASE_URL}${endpoint}`, formData);
       
       if (response.data.access_token) {
         localStorage.setItem('token', response.data.access_token);
@@ -50,8 +59,13 @@ const LoginForm = () => {
       return;
     }
 
+    if (DEMO_MODE) {
+      alert('Demo mode: Password reset feature not available');
+      return;
+    }
+
     try {
-      await axios.post('http://localhost:5000/forgot-password', { email: formData.email });
+      await axios.post(`${API_BASE_URL}/forgot-password`, { email: formData.email });
       alert('Password reset instructions sent to your email');
     } catch (error) {
       setErrors({ submit: error.response?.data?.error || 'An error occurred' });
