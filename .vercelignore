@@ -1,0 +1,8 @@
+node_modules
+.git
+backend
+*.log
+.env
+.env.local
+.env.production
+.DS_Store
