@@ -50,6 +50,17 @@ const DiceGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
           <h2 className="text-2xl font-bold text-white mb-6">🎲 Dice Roll</h2>
           
+          {/* Instructions */}
+          <div className="bg-blue-600/20 border border-blue-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-blue-200 text-sm space-y-1">
+              <li>• Click "Roll Dice" to start</li>
+              <li>• Win if you roll 4, 5, or 6</li>
+              <li>• Winning pays 2x your bet</li>
+              <li>• Rolling 1, 2, or 3 loses your bet</li>
+            </ul>
+          </div>
+          
           <div className="mb-8">
             <div className={`text-8xl mb-4 transition-transform ${isRolling ? 'animate-spin' : ''}`}>
               {getDiceDisplay(diceValue)}

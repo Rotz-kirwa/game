@@ -64,6 +64,18 @@ const MinesGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">💣 Mines</h2>
           
+          {/* Instructions */}
+          <div className="bg-red-600/20 border border-red-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-red-200 text-sm space-y-1">
+              <li>• Choose number of mines (1-5)</li>
+              <li>• Click tiles to reveal diamonds 💎</li>
+              <li>• Avoid mines 💣 or you lose everything</li>
+              <li>• Each safe tile increases your multiplier</li>
+              <li>• Cash out anytime to secure your winnings</li>
+            </ul>
+          </div>
+          
           {gameState === 'setup' && (
             <div className="text-center">
               <div className="mb-6">

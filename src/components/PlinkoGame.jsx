@@ -47,6 +47,18 @@ const PlinkoGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">🟢 Plinko</h2>
           
+          {/* Instructions */}
+          <div className="bg-pink-600/20 border border-pink-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-pink-200 text-sm space-y-1">
+              <li>• Drop the ball from the top</li>
+              <li>• Ball bounces through pegs randomly</li>
+              <li>• Win based on which slot it lands in</li>
+              <li>• Center slots have higher multipliers</li>
+              <li>• Edge slots have lower multipliers</li>
+            </ul>
+          </div>
+          
           <div className="relative bg-gradient-to-b from-blue-800 to-purple-800 rounded-lg h-96 mb-6 overflow-hidden">
             {/* Pegs */}
             {[...Array(8)].map((_, row) => 

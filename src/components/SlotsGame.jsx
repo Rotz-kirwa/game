@@ -48,6 +48,18 @@ const SlotsGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
           <h2 className="text-2xl font-bold text-white mb-6">🎰 Slot Machine</h2>
           
+          {/* Instructions */}
+          <div className="bg-yellow-600/20 border border-yellow-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-yellow-200 text-sm space-y-1">
+              <li>• Pull the lever to spin 3 reels</li>
+              <li>• Match 3 symbols to win</li>
+              <li>• 🍒🍒🍒 = 10x payout</li>
+              <li>• 🔔🔔🔔 = 5x payout</li>
+              <li>• 🍋🍋🍋 = 3x payout</li>
+            </ul>
+          </div>
+          
           <div className="bg-black/30 rounded-lg p-6 mb-6">
             <div className="flex justify-center gap-4 mb-4">
               {reels.map((symbol, index) => (

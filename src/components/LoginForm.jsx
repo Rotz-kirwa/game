@@ -73,8 +73,67 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h1 className="text-6xl font-bold text-white mb-4">
+              🎯 <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">MegaOdds</span>
+            </h1>
+            <p className="text-2xl text-gray-300 mb-8">Kenya's Premier Online Betting Platform</p>
+            <div className="flex justify-center gap-8 text-white">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-yellow-400">16+</div>
+                <div className="text-sm">Games</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-green-400">KSh162,500</div>
+                <div className="text-sm">Welcome Bonus</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-400">24/7</div>
+                <div className="text-sm">Support</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <div className="text-4xl mb-4">🎰</div>
+              <h3 className="text-xl font-bold text-white mb-2">Casino Games</h3>
+              <p className="text-gray-300">Dice, Roulette, Blackjack, Slots & more with realistic gameplay</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <div className="text-4xl mb-4">⚽</div>
+              <h3 className="text-xl font-bold text-white mb-2">Sports Betting</h3>
+              <p className="text-gray-300">Live matches, penalty shootouts with competitive odds</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <div className="text-4xl mb-4">💰</div>
+              <h3 className="text-xl font-bold text-white mb-2">M-Pesa Ready</h3>
+              <p className="text-gray-300">Instant deposits & withdrawals via M-Pesa integration</p>
+            </div>
+          </div>
+
+          {/* Game Showcase */}
+          <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-12">
+            <h2 className="text-3xl font-bold text-white text-center mb-8">Popular Games</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+              {['🎲', '🪙', '🎰', '🃏', '⚽', '✈️', '💣', '🎡'].map((emoji, i) => (
+                <div key={i} className="bg-white/10 rounded-lg p-4 text-center hover:bg-white/20 transition-all">
+                  <div className="text-3xl mb-2">{emoji}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Login Section */}
+      <div className="flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">
             {showSignUp ? 'Create Account' : 'Welcome Back'}
@@ -153,6 +212,19 @@ const LoginForm = () => {
               {showSignUp ? 'Sign In' : 'Sign Up'}
             </button>
           </div>
+        </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-black/20 backdrop-blur-sm border-t border-white/10 py-8">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <div className="flex justify-center gap-8 mb-4 text-white">
+            <span>🔒 Secure Gaming</span>
+            <span>⚡ Instant Payouts</span>
+            <span>🎯 Fair Play</span>
+          </div>
+          <p className="text-gray-400 text-sm">© 2024 MegaOdds Kenya. Play Responsibly. 18+</p>
         </div>
       </div>
     </div>

@@ -115,6 +115,18 @@ const BlackjackGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
           <h2 className="text-2xl font-bold text-white mb-6 text-center">🃏 Blackjack</h2>
           
+          {/* Instructions */}
+          <div className="bg-green-600/20 border border-green-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-green-200 text-sm space-y-1">
+              <li>• Get as close to 21 as possible</li>
+              <li>• Hit to draw another card</li>
+              <li>• Stand to keep current total</li>
+              <li>• Beat dealer without going over 21</li>
+              <li>• Blackjack (21) pays 2.5x</li>
+            </ul>
+          </div>
+          
           {gameState === 'betting' && (
             <div className="text-center">
               <p className="text-white mb-4">Bet: ${betAmount} | Win: ${betAmount * 1.5}</p>

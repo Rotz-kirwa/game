@@ -63,6 +63,18 @@ const RouletteGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
           <h2 className="text-2xl font-bold text-white mb-6">🎰 Roulette</h2>
           
+          {/* Instructions */}
+          <div className="bg-red-600/20 border border-red-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-red-200 text-sm space-y-1">
+              <li>• Choose Red, Black, Even, or Odd</li>
+              <li>• Spin the wheel (0-36)</li>
+              <li>• Win if ball lands on your choice</li>
+              <li>• Green 0 loses all bets</li>
+              <li>• Winning pays 2x your bet</li>
+            </ul>
+          </div>
+          
           <div className="mb-6">
             <div className={`text-6xl mb-4 ${isSpinning ? 'animate-spin' : ''}`}>
               🎯

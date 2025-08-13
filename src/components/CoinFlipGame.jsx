@@ -38,6 +38,17 @@ const CoinFlipGame = ({ betAmount, onGameResult, onBack }) => {
         <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20 text-center">
           <h2 className="text-2xl font-bold text-white mb-6">🪙 Coin Flip</h2>
           
+          {/* Instructions */}
+          <div className="bg-green-600/20 border border-green-400/30 rounded-lg p-4 mb-6 text-left">
+            <h3 className="text-white font-semibold mb-2">📋 How to Play:</h3>
+            <ul className="text-green-200 text-sm space-y-1">
+              <li>• Choose Heads (👑) or Tails (🪙)</li>
+              <li>• Click "Flip Coin" to start</li>
+              <li>• Win if coin lands on your choice</li>
+              <li>• Winning pays 1x your bet (double money)</li>
+            </ul>
+          </div>
+          
           <div className="mb-6">
             <div className={`text-8xl mb-4 ${isFlipping ? 'animate-spin' : ''}`}>
               {coinSide === 'heads' ? '👑' : '🪙'}
